@@ -1,0 +1,539 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProxyAPI</name>
+    </assembly>
+    <members>
+        <member name="P:WeatherForecast.Id">
+            <summary>
+            Уникальный идентификатор организации
+            </summary>
+        </member>
+        <member name="P:WeatherForecast.Name">
+            <summary>
+            Название организации
+            </summary>
+        </member>
+        <member name="P:WeatherForecast.Address">
+            <summary>
+            Полный адрес
+            </summary>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.FeedAsync">
+            <summary>
+            Фид организаций
+            </summary>
+            <remarks>
+            Список всех организаций, подключенных к партнеру, у которых доступна онлайн-запись.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;JWT payload:&lt;/b&gt; `{}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `60s`
+            </remarks>
+            <returns>Список организаций</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.FeedAsync(System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Фид организаций
+            </summary>
+            <remarks>
+            Список всех организаций, подключенных к партнеру, у которых доступна онлайн-запись.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;JWT payload:&lt;/b&gt; `{}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `60s`
+            </remarks>
+            <returns>Список организаций</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.ServicesAsync(System.String,System.String)">
+            <summary>
+            Список услуг, доступных для онлайн-записи
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="resourceId">Фильтрация по ресурсу (мастеру)</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.ServicesAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Список услуг, доступных для онлайн-записи
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="resourceId">Фильтрация по ресурсу (мастеру)</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.ResourcesAsync(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Список ресурсов, доступных для онлайн-записи
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="serviceIds">Фильтрация по списку услуг, выбранных пользователем</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.ResourcesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Список ресурсов, доступных для онлайн-записи
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="serviceIds">Фильтрация по списку услуг, выбранных пользователем</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.ReviewsAsync(System.String,System.String)">
+            <summary>
+            Отзывы на ресурс
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`&lt;br/&gt;Отзывы запрашиваются, только если у ресурса reviewsCount &gt; 0
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="resourceId">Идентификатор ресурса</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.ReviewsAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Отзывы на ресурс
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`&lt;br/&gt;Отзывы запрашиваются, только если у ресурса reviewsCount &gt; 0
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="resourceId">Идентификатор ресурса</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.Available_datesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)">
+            <summary>
+            Список доступных для записи дат
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="serviceIds">Фильтрация по списку услуг, выбранных пользователем</param>
+            <param name="resourceId">Фильтрация по ресурсу (мастеру)</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.Available_datesAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Список доступных для записи дат
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="serviceIds">Фильтрация по списку услуг, выбранных пользователем</param>
+            <param name="resourceId">Фильтрация по ресурсу (мастеру)</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.Available_time_slotsAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+            <summary>
+            Список доступных для записи слотов
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="serviceIds">Фильтрация по списку услуг, выбранных пользователем</param>
+            <param name="resourceId">Фильтрация по ресурсу (мастеру)</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.Available_time_slotsAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Список доступных для записи слотов
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <param name="companyId">Идентификатор организации</param>
+            <param name="serviceIds">Фильтрация по списку услуг, выбранных пользователем</param>
+            <param name="resourceId">Фильтрация по ресурсу (мастеру)</param>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsPOSTAsync(ProxyAPI.Body)">
+            <summary>
+            Создать запись
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}", "userPhone": "{userPhone}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Успешное создание записи</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsPOSTAsync(ProxyAPI.Body,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Создать запись
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}", "userPhone": "{userPhone}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Успешное создание записи</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsGETAsync(System.String)">
+            <summary>
+            Получить информацию о записи
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"bookingId": "{bookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsGETAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Получить информацию о записи
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"bookingId": "{bookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>OK</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsPUTAsync(ProxyAPI.BookingUpdate,System.String)">
+            <summary>
+            Обновить запись (перенести на другое время, обновить комментарий)
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"bookingId": "{bookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`&lt;br/&gt;&lt;br/&gt;При изменениях в записи (изменение статуса/перенос/отмена), которые совершаются внутри системы партнера (не инициированы описанным здесь запросом), необходимо отправить PUT-запрос `https://partner.maps.yandex.net/booking/v1/partners/{partnerId}/{bookingId}` чтобы синхронизировать состояние записи с личным кабинетом пользователя в Картах
+            </remarks>
+            <returns>Запись обновлена успешно</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsPUTAsync(ProxyAPI.BookingUpdate,System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Обновить запись (перенести на другое время, обновить комментарий)
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"bookingId": "{bookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`&lt;br/&gt;&lt;br/&gt;При изменениях в записи (изменение статуса/перенос/отмена), которые совершаются внутри системы партнера (не инициированы описанным здесь запросом), необходимо отправить PUT-запрос `https://partner.maps.yandex.net/booking/v1/partners/{partnerId}/{bookingId}` чтобы синхронизировать состояние записи с личным кабинетом пользователя в Картах
+            </remarks>
+            <returns>Запись обновлена успешно</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsDELETEAsync(System.String)">
+            <summary>
+            Отменить/удалить запись
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"bookingId": "{bookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Запись удалена успешно</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.BookingsDELETEAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Отменить/удалить запись
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"bookingId": "{bookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Запись удалена успешно</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.PrebookingsPOSTAsync(ProxyAPI.Body2)">
+            <summary>
+            Создать предварительную бронь на слот
+            </summary>
+            <remarks>
+            Эндпоинт не обязателен для реализации, если функциональность предварительного бронирования не предусмотрена.&lt;br/&gt;&lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Успешное создание предварительной брони</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.PrebookingsPOSTAsync(ProxyAPI.Body2,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Создать предварительную бронь на слот
+            </summary>
+            <remarks>
+            Эндпоинт не обязателен для реализации, если функциональность предварительного бронирования не предусмотрена.&lt;br/&gt;&lt;b&gt;JWT payload:&lt;/b&gt; `{"companyId": "{companyId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Успешное создание предварительной брони</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.PrebookingsDELETEAsync(System.String)">
+            <summary>
+            Отменить/удалить предварительную бронь на слот
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"prebookingId": "{prebookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Бронь удалена успешно</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="M:ProxyAPI.swaggerClient.PrebookingsDELETEAsync(System.String,System.Threading.CancellationToken)">
+            <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <summary>
+            Отменить/удалить предварительную бронь на слот
+            </summary>
+            <remarks>
+            &lt;b&gt;JWT payload:&lt;/b&gt; `{"prebookingId": "{prebookingId}"}`&lt;br/&gt;&lt;b&gt;Timeout:&lt;/b&gt; `5s`
+            </remarks>
+            <returns>Бронь удалена успешно</returns>
+            <exception cref="T:ProxyAPI.ApiException">A server side error occurred.</exception>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Id">
+            <summary>
+            Уникальный идентификатор организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Name">
+            <summary>
+            Название организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Address">
+            <summary>
+            Полный адрес
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Coordinates">
+            <summary>
+            Координаты
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Photos">
+            <summary>
+            Фотографии организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Phones">
+            <summary>
+            Телефоны организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Urls">
+            <summary>
+            Сайты организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.BookingUrl">
+            <summary>
+            Ссылка на виджет онлайн-записи партнера
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Services">
+            <summary>
+            Список услуг в организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Resources">
+            <summary>
+            Список ресурсов (мастеров) в организации
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.FeedCompany.Rubrics">
+            <summary>
+            Список рубрик организации. В свободном формате, фиксированного списка допустимых рубрик нет.
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Service.Id">
+            <summary>
+            Уникальный идентификатор услуги
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Service.Title">
+            <summary>
+            Название услуги
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Service.Description">
+            <summary>
+            Подробное описание услуги
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Service.Category">
+            <summary>
+            Категория услуги. Услуги с одинаковым значением в этом поле объединяются в одну группу.
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Service.DurationSeconds">
+            <summary>
+            Продолжительность услуги в секундах.
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Service.Resources">
+            <summary>
+            Список ресурсов, связанных с данной услугой. В сфере 'Красота': список мастеров, которые оказывают услугу
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resource.Id">
+            <summary>
+            Уникальный идентификатор ресурса
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resource.Title">
+            <summary>
+            Название ресурса (имя мастера)
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resource.Description">
+            <summary>
+            Короткое описание ресурса (в сфере 'Красота': должность/специализация мастера)
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resource.Information">
+            <summary>
+            Подробное описание ресурса
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resource.Rating">
+            <summary>
+            Рейтинг по 5-балльной шкале
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resource.ReviewsCount">
+            <summary>
+            Количество отзывов
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Review.Id">
+            <summary>
+            Уникальный идентификатор отзыва
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Review.Text">
+            <summary>
+            Текст отзыва
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Review.Rating">
+            <summary>
+            Оценка по 5-балльной шкале
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Review.Author">
+            <summary>
+            Автор отзыва
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.BookingInput.PrebookingId">
+            <summary>
+            Идентификатор предварительной брони.
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.Booking">
+            <summary>
+            Отдельная запись
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Booking.Id">
+            <summary>
+            Уникальный идентификатор записи
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Booking.Status">
+            <summary>
+            `created` — начальный статус сразу после создания записи; `confirmed` — запись подтверждена (если предусмотрены подтверждения); `visited` — пользователь пришёл, запись состоялась; `not visited` — пользователь не пришёл; `cancelled` - запись отменена
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.UserInfo">
+            <summary>
+            Информация о пользователе
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.AvailableDate">
+            <summary>
+            Доступная для записи дата
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.AvailableTimeSlot">
+            <summary>
+            Доступный для записи слот
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.LocalizedText">
+            <summary>
+            Тексты на разных языках
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.LocalizedText.Text">
+            <summary>
+            Текст на русском языке
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.SlotUnavailableError">
+            <summary>
+            Выбранное время недоступно для записи
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.ServiceNotFoundError">
+            <summary>
+            Услуга не найдена/недоступна для онлайн-записи
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.ResourceNotFoundError">
+            <summary>
+            Ресурс не найден/недоступен для онлайн-записи
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.CreateForbiddenError">
+            <summary>
+            Создание записи запрещено. Например, пользователь находится в блок-листе.
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.UpdateForbiddenError">
+            <summary>
+            Обновление записи запрещено. Например, в организации запрещён перенос записей позже, чем за 1 час до назначенного визита.
+            </summary>
+        </member>
+        <member name="T:ProxyAPI.CancelForbiddenError">
+            <summary>
+            Отмена записи запрещена. Например, в организации запрещёна отмена записей позже, чем за 1 час до назначенного визита.
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Price.CurrencyCode">
+            <summary>
+            Код валюты в формате ISO 4217
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Price.Range">
+            <summary>
+            Диапазон цены. Если цена точная, должен быть массив из двух одинаковых значений. Например, [500, 500]. Если известна только цена 'от', передается одно значение, например [500]
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Resources.DurationSeconds">
+            <summary>
+            Продолжительность услуги в секундах. Необходимо, только если продолжительность отличается в зависимости от ресурса.
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Author.Name">
+            <summary>
+            Имя автора отзыва
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.LocalizedText2.Lang">
+            <summary>
+            Код языка в ISO 639-1
+            </summary>
+        </member>
+        <member name="P:ProxyAPI.Prebooking.Id">
+            <summary>
+            Идентификатор предварительной брони. Будет передан при создании бронирования.
+            </summary>
+        </member>
+    </members>
+</doc>

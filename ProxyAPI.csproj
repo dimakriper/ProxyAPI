@@ -5,10 +5,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>true</InvariantGlobalization>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>docs.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <OpenApiReference Include="..\..\..\Downloads\swagger.json" CodeGenerator="NSwagCSharp" Link="OpenAPIs\swagger.json" >
+    <OpenApiReference Include="..\..\..\Downloads\swagger.json" CodeGenerator="NSwagCSharp" Link="OpenAPIs\swagger.json">
 	  
 		  <Options>/OperationGenerationMode:SingleClientFromOperationId</Options>
 	  </OpenApiReference>
